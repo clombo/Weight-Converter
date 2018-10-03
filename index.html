@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+    <title>Weight Converter</title>
+</head>
+<body>
+        <div class="container">
+                <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                    <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+
+                    <form>
+                      <div class="form-group">
+                        <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter Pounds...">
+                      </div>
+                    </form>
+
+                    <div id="output">
+                        
+
+                      <div class="card bg-primary mb-2">
+                          <div class="card-header">Grams</div>
+                          <div class="card-body">
+                              <h5 class="card-title">Total grams converted</h5>
+                              <p class="card-text" id="gramsOut"></p>
+                          </div>
+                      </div>
+              
+                        <div class="card bg-success mb-2">
+                            <div class="card-header">Killograms</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Total killograms converted</h5>
+                                <p class="card-text" id="kgOut"></p>
+                            </div>
+                        </div>
+              
+                        <div class="card bg-danger mb-2">
+                            <div class="card-header">Ounces</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Total ounces converted</h5>
+                                <p class="card-text" id="ozOut"></p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    <script>
+        document.getElementById("output").style.visibility = "hidden"
+
+        document.getElementById("lbsInput").addEventListener("input",function(e){
+
+            let pounds = e.target.value;
+            
+            document.getElementById("gramsOut").innerHTML = pounds/0.0022046;
+            document.getElementById("kgOut").innerHTML = pounds/2.2046;
+            document.getElementById("ozOut").innerHTML = pounds*16;
+
+            document.getElementById("output").style.visibility = "visible"
+        })
+    </script>
+</body>
+</html>
